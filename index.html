@@ -20,8 +20,7 @@ Brief Description of Goal of Code:
 This code aims to help users determine if their symptoms are reminiscent of the common cold or allergies. 
  
 Known Issues:
-This program does not include other diseases, such as the flu, which could have cold or allergy-like symptoms. 
-
+The results page does not display sometimes
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -38,6 +37,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <script>
         var allergy_count = 0;
         var cold_count = 0;
+	var allergyPercent = 0;
+	//added variable to calculate percent of answers that correlate to allergy symptoms
+	var coldPercent = 0
 
 
         function allergyAdd(){
@@ -95,12 +97,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<h1>Question 1</h1>
 	</div>
 	
-    	<div id="content" class="w3-container">
-        <p>Are your eyes watery or itchy?</p>
-		<!Added the question above to replace previous Question 1 text>
-	<a href="#two" class="w3-btn w3-black"> Yes </a>
-	<a href="#two" class="w3-btn w3-black"> No </a>
-		<!Added yes and no buttons that will navigate to page two when clicked>
+	<div id="content" class="w3-container">
+	<p>Are your eyes watery or itchy?</p>    
+	<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black"> Yes</a>
+        <a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+ </div><!--Added button to trigger Javascript event-->
 
     	</div>
 </div>
@@ -108,13 +109,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <div class="page" id="two">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
-		<!Added question two>
+		<!--Added question two-->
 	</div>
 	
 	<div id="content" class="w3-container">
-	<p>Do you have a fever?</p>
-	<a href="#three" class="w3-btn w3-black"> Yes </a>
-	<a href="#three" class="w3-btn w3-black"> No </a>
+	<p>Do you have a fever?</p>    
+	<a href="#three"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
+        <a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+ </div><!--Added button to trigger Javascript-->
+
 		
 	</div>
 </div>	
@@ -125,9 +128,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container">
-	<p>Do you have a sore throat?</p>
-	<a href="#four" class="w3-btn w3-black"> Yes </a>
-	<a href="#four" class="w3-btn w3-black"> No </a>
+	<p>Do you have a sore throat?</p>    
+	<a href="#four"  onclick="coldAdd();" class="w3-btn w3-black"> Yes</a>
+        <a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+ </div><!--Added count feature-->
+
 		
 	</div>
 </div>	
@@ -138,15 +143,22 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container">
-	<p>Are your symptoms seasonal or chronic?</p>
-	<a href="#five" class="w3-btn w3-black"> Yes </a>
-	<a href="#five" class="w3-btn w3-black"> No </a>
+	<p>Are your symptoms seasonal or chronic?</p>    
+	<a href="#five"  onclick="allergyAdd();" class="w3-btn w3-black"> Seasonal</a>
+        <a href="#five"  onclick="coldAdd();" class="w3-btn w3-black">Chronic</a>
+		<!--Changed yes to seasonal and no to chronic-->
+ </div><!--Added count feature-->
+
 		
 	</div>
 </div>	
 	
 <div class="page" id="five">
 	<div class="w3-container w3-flat-carrot">
+ <p id="results"></p>
+ <!--Added results button-->
+	<h1>Results</h1>
+
 		
 	
 <footer class="w3-bottom w3-container w3-flat-carrot">
