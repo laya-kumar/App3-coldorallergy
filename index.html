@@ -37,8 +37,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <script>
 	var allergy_count = 0; //number of allergy symptoms starts at 0
    	var cold_count = 0; //number of cold symptoms starts at 0
-	var allergyPercent = 0; //added variable to calculate percent of answers that correlate to allergy symptoms
-	var coldPercent = 0; //added variable to calculate percent of answers that correlate to cold symptoms
+	//deleted variables for coldPercent and allergyPercent
 
         function allergyAdd(){
             allergy_count = allergy_count + 1; //adds one to allergy count everytime a button correlating to allergy symptoms is clicked
@@ -54,7 +53,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		var allergyPercent = allergy_count / 4 * 100; //calculates percentage of allergy symptoms based on allergy count variable
 		var coldPercent = cold_count / 4 * 100; //calculate percentage of cold symptoms based on cold count variable
 		var resultText = document.getElementById("five"); //added variable to show results; put five inside quotes instead of results
-		<p id="results">resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent;</p> 
+		resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent;</p> 
 		//added inner HTML command to show probabilities of cold and allergies
 		}
 	
