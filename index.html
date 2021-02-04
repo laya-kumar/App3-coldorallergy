@@ -35,22 +35,27 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
-        var allergy_count = 0;
-        var cold_count = 0;
-	var allergyPercent = 0;
-	//added variable to calculate percent of answers that correlate to allergy symptoms
-	var coldPercent = 0
-
+	var allergy_count = 0; //number of allergy symptoms starts at 0
+   	var cold_count = 0; //number of cold symptoms starts at 0
+	var allergyPercent = 0; //added variable to calculate percent of answers that correlate to allergy symptoms
+	var coldPercent = 0; //added variable to calculate percent of answers that correlate to cold symptoms
 
         function allergyAdd(){
-            allergy_count = allergy_count + 1;
-		alert(allergy_count);
+            allergy_count = allergy_count + 1; //adds one to allergy count everytime a button correlating to allergy symptoms is clicked
+	    //removed alert that counted allergy symptoms
 
         }
 
-        function coldAdd(){
+        function coldAdd(){ //adds one to cold count every time a button correlating to cold symptoms is clicked
             cold_count = cold_count + 1;
         }
+	
+	function percentageResult(){
+		var allergyPercent = allergy_count / 4 * 100; //calculates percentage of allergy symptoms based on allergy count variable
+		var coldPercent = cold_count / 4 * 100; //calculate percentage of cold symptoms based on cold count variable
+		var resultText = document.getElementById("results"); //added variable to show results 
+
+	
 
   </script>
 
@@ -155,11 +160,17 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 <div class="page" id="five">
 	<div class="w3-container w3-flat-carrot">
- <p id="results"></p>
+ <p id="results">resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent;</p> <!--added inner HTML command to show probabilities of cold and allergies-->
  <!--Added results button-->
-	<h1>Results</h1>
+	<h1>Results</h1> <!--named page results in header-->
+</div> <!--added dividing line-->
+	
+<div id="content" class="w3-container" 
+	<p>Results</p>
+	<a onclick="percentageResults();" class="w3-btn w3-black" See your results</a> <!--added button that shows percentage results-->
 
-		
+</div> <!--added dividing line-->
+
 	
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
