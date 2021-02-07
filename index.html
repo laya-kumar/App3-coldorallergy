@@ -20,7 +20,7 @@ Brief Description of Goal of Code:
 This code aims to help users determine if their symptoms are reminiscent of the common cold or allergies. 
  
 Known Issues:
-The results page does not display sometimes
+The results page does not load.
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -52,6 +52,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	function percentageResult(){
 		var allergyPercent = allergy_count / 4 * 100; //calculates percentage of allergy symptoms based on allergy count variable
 		var coldPercent = cold_count / 4 * 100; //calculate percentage of cold symptoms based on cold count variable
+		alert(coldPercent);
 		var resultText = document.getElementById("resultsopen"); //added variable to show results
 		resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; 
 		//added inner HTML command to show probabilities of cold and allergies
